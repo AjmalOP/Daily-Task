@@ -13,4 +13,4 @@ var getConcatenation = function(nums,array = []) {
     }
     return array;
 };
-getConcatenation([1,3,2,1]);
+getConcatenation([1,2,3]);
