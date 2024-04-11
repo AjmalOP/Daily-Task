@@ -1,0 +1,11 @@
+// LEET CODE PROBLEM 2696 : https://leetcode.com/problems/minimum-string-length-after-removing-substrings
+
+var minLength = function(s) {
+    while(s.includes('AB')||s.includes('CD'))
+    {
+        s = s.replace('AB','')
+        s = s.replace('CD','')
+    }
+    return s.length;
+};
+console.log(minLength("ABFCACDB"));
