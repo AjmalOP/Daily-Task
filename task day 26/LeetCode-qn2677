@@ -1,1 +1,21 @@
 // LEET CODE PROBLEM 2677 : https://leetcode.com/problems/chunk-array
+
+var chunk = function(arr, size) {
+    var x = [];
+    if(arr.length == 0)
+    {
+        return x;
+    }
+    if(arr.length > size)
+    {
+        while(arr.length > size)
+        {
+            x.push(arr.splice(0,size))
+        }
+    }
+    if(arr.length <= size)
+    {
+        x.push(arr);
+    }
+    return x;
+};
