@@ -1,0 +1,20 @@
+// LEET CODE PROBLEM 2710 : https://leetcode.com/problems/remove-trailing-zeros-from-a-string
+
+// Solution One
+var removeTrailingZeros = function(num) {
+    x = num.split("");
+    while(x[x.length-1] == 0)
+    {
+        x.pop();
+    }
+    return x.join("");
+};
+
+// Solution Two
+var removeTrailingZeros = function(num) {
+    while(num[num.length-1] == 0)
+    {
+        num = num.slice(0,-1);
+    }
+    return num;
+};
