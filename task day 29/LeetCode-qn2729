@@ -1,4 +1,4 @@
-// LEET CODE PROBLEM 2710 : https://leetcode.com/problems/check-if-the-number-is-fascinating
+// LEET CODE PROBLEM 2729 : https://leetcode.com/problems/check-if-the-number-is-fascinating
 
 var isFascinating = function(n) {
     x = ""+n+2*n+3*n;
