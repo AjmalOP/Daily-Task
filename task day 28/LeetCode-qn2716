@@ -1,0 +1,39 @@
+// LEET CODE PROBLEM 2716 : https://leetcode.com/problems/minimize-string-length
+
+// Solution One
+var minimizedStringLength = function(s) {
+    var m = [];
+    while(s[0])
+    {
+        console.log(s[0])
+        console.log(s)
+        if(!m.includes(s[0]))
+        {
+            m.push(s[0]);
+            s = s.slice(1);
+        }
+        else
+        {
+            s = s.slice(1);
+        }
+    }
+    return m.length;
+}
+
+// Solution Two
+var minimizedStringLength = function(s) {
+    var m = []
+    for(i=0;i<s.length;i++)
+    {
+      if(!m.includes(s[i])
+      {
+        m.push(s[0]);
+      }
+    }
+    return m.length;
+}
+
+// Solution Three
+var minimizedStringLength = function(s) {
+ return new Set(s).size;
+}
