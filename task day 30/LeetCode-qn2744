@@ -1,0 +1,14 @@
+// LEET CODE PROBLEM 2744 : https://leetcode.com/problems/find-maximum-number-of-string-pairs
+
+var maximumNumberOfStringPairs = function(words) {
+    k = 0;
+    for(i=0;i<words.length;i++)
+    {
+        x = words.slice(i+1)
+        if(x.includes(words[i].split("").reverse().join("")))
+        {
+            k++;
+        }
+    }
+    return k;
+};
