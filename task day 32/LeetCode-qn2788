@@ -1,0 +1,18 @@
+// LEET CODE PROBLEM 2788 : https://leetcode.com/problems/split-strings-by-separator
+
+var splitWordsBySeparator = function(words, separator) {
+    let x = []
+    let y = []
+    for(i=0;i<words.length;i++)
+    {
+        x.push(...words[i].split(separator));
+    }
+    for(i=0;i<x.length;i++)
+    {
+        if(x[i]!=="")
+        {
+            y.push(x[i])
+        }
+    }
+    return y;
+};
