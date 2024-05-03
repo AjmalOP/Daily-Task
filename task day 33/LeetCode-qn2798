@@ -1,0 +1,10 @@
+// LEET CODE PROBLEM 2798 : https://leetcode.com/problems/number-of-employees-who-met-the-target
+
+var numberOfEmployeesWhoMetTarget = function(hours, target) {
+    let count = 0;
+    for(i=0;i<hours.length;i++)
+    {
+        if(hours[i]>=target) count++;
+    }
+    return count;
+};
