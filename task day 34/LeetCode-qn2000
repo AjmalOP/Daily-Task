@@ -1,0 +1,5 @@
+// LEET CODE PROBLEM 2000 : https://leetcode.com/problems/reverse-prefix-of-word
+
+var reversePrefix = function(word, ch) {
+   return word.slice(0,word.indexOf(ch)+1).split("").reverse().join("") + word.slice(word.indexOf(ch)+1)
+};
