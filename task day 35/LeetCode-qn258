@@ -1,0 +1,14 @@
+// LEET CODE PROBLEM 258 : https://leetcode.com/problems/add-digits
+
+var addDigits = function(num) {
+    string = num.toString();
+    while(string.length !== 1){
+        num = 0
+        for(i=0;i<string.length;i++){
+            num += Number(string[i]);
+        }
+        string = num.toString();
+    }
+    return Number(string);
+};
+console.log(addDigits(191919));
