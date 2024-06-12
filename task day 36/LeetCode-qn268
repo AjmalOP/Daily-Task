@@ -1,0 +1,26 @@
+// LEET CODE PROBLEM 268 : https://leetcode.com/problems/missing-number
+
+// Using Javascript
+
+ var missingNumber = function(nums) {
+    let range = nums.length;
+    for(i=0;i<nums.length;i++){
+        range += i - nums[i];
+    }
+    return range
+};
+
+
+
+// Using C#
+
+public class Solution {
+    public int MissingNumber(int[] nums) {
+        int length = nums.Length;
+        for (int i=0;i<nums.Length;i++)
+        {
+            length += i - nums[i];
+        }
+        return length;
+    }
+}
