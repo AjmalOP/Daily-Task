@@ -1,0 +1,17 @@
+// LEET CODE PROBLEM 217 : https://leetcode.com/problems/contains-duplicate
+
+// Using Javascript
+
+ var containsDuplicate = function(nums) {
+    return nums.length != new Set(nums).size;
+};
+
+
+
+// Using C#
+
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+        return nums.Length != nums.Distinct().Count();
+    }
+}
