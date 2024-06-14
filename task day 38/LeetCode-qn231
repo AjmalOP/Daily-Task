@@ -1,0 +1,17 @@
+// LEET CODE PROBLEM 231 : https://leetcode.com/problems/power-of-two
+
+// Using Javascript
+
+var isPowerOfTwo = function(n) {
+    return n > 0 && (n & (n-1)) === 0;
+};
+
+
+
+// Using C#
+
+public class Solution {
+    public bool IsPowerOfTwo(int n) {
+        return n > 0 && (n & (n-1)) == 0;
+    }
+}
