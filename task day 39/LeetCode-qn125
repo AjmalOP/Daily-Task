@@ -1,0 +1,26 @@
+// LEET CODE PROBLEM 125 : https://leetcode.com/problems/valid-palindrome
+
+// Using Javascript
+
+var isPalindrome = function(s) {
+    var s = s.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
+    return s === s.split("").reverse().join("");
+};
+
+
+
+// Using C#
+
+public class Solution {
+    public bool IsPalindrome(string s) {
+        s = System.Text.RegularExpressions.Regex.Replace(s.ToLower(),"[^a-z0-9]","");
+        int i;
+        for(i=0;i<s.Length;i++){
+            if(s[i]!=s[s.Length-1-i])
+            {
+                break;
+            }
+        }
+        return i == s.Length;
+    }
+}
