@@ -19,3 +19,25 @@ var lengthOfLongestSubstring = function(s) {
     }
     return size;
 };
+
+Using C#
+
+public class Solution {
+    public int LengthOfLongestSubstring(string s) {
+        HashSet<char> strSet = new HashSet<char>();
+        int size = 0;
+        int index = 0;
+        for(int i=0;i<s.Length;i++)
+        {
+            char str = s[i];
+            while(strSet.Contains(str))
+            {
+                strSet.Remove(s[index]);
+                index++;
+            }
+            strSet.Add(str);
+            size = Math.Max(size, strSet.Count);
+        }
+        return size;
+    }
+}
