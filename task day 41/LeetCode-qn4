@@ -1,0 +1,32 @@
+// LEET CODE PROBLEM 4 : https://leetcode.com/problems/median-of-two-sorted-arrays
+
+// Using Javascript
+
+var findMedianSortedArrays = function(nums1, nums2) {
+    var size = nums1.concat(nums2).sort(function(a, b){return a-b});
+    if(size.length % 2 == 0)
+    {
+        return (size[(size.length/2)-1] + size[size.length/2])/2
+    }
+    else
+    {
+        return size[Math.floor(size.length/2)]
+    }
+};
+
+// Using C#
+
+public class Solution {
+    public double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+        int[] x = nums1.Concat(nums2).OrderBy(n=>n).ToArray();
+        int length = x.Length;
+        if(x.Length%2==0)
+        {
+            return (x[length / 2-1]+x[length / 2])/2.0;
+        }
+        else
+        {
+            return x[length / 2];
+        }
+    }
+}
