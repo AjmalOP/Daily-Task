@@ -1,0 +1,21 @@
+// LEET CODE PROBLEM 3 : https://leetcode.com/problems/longest-substring-without-repeating-characters
+
+Using JavaScript
+
+var lengthOfLongestSubstring = function(s) {
+    let str = new Set();
+    let index = 0;
+    let size = 0;
+    for(i=0;i<s.length;i++)
+    {
+        let char = s[i];
+        while(str.has(char))
+        {
+            str.delete(s[index]);
+            index++;
+        }
+        str.add(char);
+        size = Math.max(size, str.size);
+    }
+    return size;
+};
