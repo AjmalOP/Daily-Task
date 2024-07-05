@@ -1,0 +1,71 @@
+// LEET CODE PROBLEM 13 : https://leetcode.com/problems/roman-to-integer
+
+Using JavaScript
+
+var romanToInt = function(s) {
+    let val = 0;
+    for(i=0;i<s.length;i++)
+    {
+        if ((s[i] + s[i+1]) === "IV" || (s[i] + s[i+1]) === "IX" || 
+            (s[i] + s[i+1]) === "XL" || (s[i] + s[i+1]) === "XC" || 
+            (s[i] + s[i+1]) === "CD" || (s[i] + s[i+1]) === "CM")
+        {
+            switch(s[i]+s[i+1])
+            {
+                case "IV":
+                    val += 4;
+                    i++;
+                    break;
+                case "IX":
+                    val += 9;
+                    i++;
+                    break;
+                case "XL":
+                    val += 40;
+                    i++;
+                    break;
+                case "XC":
+                    val += 90;
+                    i++;
+                    break;
+                case "CD":
+                    val += 400;
+                    i++;
+                    break;
+                case "CM":
+                    val += 900;
+                    i++;
+                    break;
+            }
+        }
+        else
+        {
+            switch(s[i])
+            {
+                case "I":
+                    val += 1;
+                    break;
+                case "V":
+                    val += 5;
+                    break;
+                case "X":
+                    val += 10;
+                    break;
+                case "L":
+                    val += 50;
+                    break;
+                case "C":
+                    val += 100;
+                    break;
+                case "D":
+                    val += 500;
+                    break;
+                case "M":
+                    val += 1000;
+                    break;
+            }
+        }
+    }
+    return val;
+};
+console.log(romanToInt("MCMXCIV"));
