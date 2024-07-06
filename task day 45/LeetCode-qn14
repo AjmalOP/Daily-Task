@@ -1,0 +1,52 @@
+// LEET CODE PROBLEM 14 : https://leetcode.com/problems/longest-common-prefix
+
+Using JavaScript
+
+var longestCommonPrefix = function(strs) {
+    const shortest = strs.reduce((a, b) => a.length <= b.length ? a : b);
+    let longstr = "";
+    for(i=0;i<shortest.length;i++)
+    {
+        for(j=0;j<strs.length;j++)
+        {
+            if(shortest[i] !== strs[j][i])
+            {
+                break;
+            }
+        }
+        if (j !== strs.length)
+        {
+            longstr = shortest.slice(0, i);
+            break;
+        }
+        longstr = shortest.slice(0, i + 1);
+    }
+    return longstr
+};
+
+Using C#
+
+public class Solution {
+    public string LongestCommonPrefix(string[] strs) {
+        string shortstr = strs.OrderBy(x => x.Length).First();
+        string longstr = "";
+        int j;
+        for(int i=0;i<shortstr.Length;i++)
+        {
+            for(j=0;j<strs.Length;j++)
+            {
+                if(shortstr[i] != strs[j][i])
+                {
+                    break;
+                }
+            }
+            if(j!=strs.Length)
+            {
+                longstr = shortstr.Substring(0, i);
+                break;
+            }
+            longstr = shortstr.Substring(0, i+1);
+        }
+        return longstr;
+    }
+}
