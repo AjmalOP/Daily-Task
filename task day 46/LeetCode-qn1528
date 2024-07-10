@@ -1,0 +1,38 @@
+// LEET CODE PROBLEM 1528 :  https://leetcode.com/problems/shuffle-string
+
+Using JavaScript
+
+var restoreString = function(s, indices) {
+    let str=[];
+    for(i=0;i<s.length;i++)
+    {
+        str[indices[i]] = s[i]
+    }
+    return str.join("");
+
+    //**solution 2**
+    // str="";
+    // for(i=0;i<s.length;i++)
+    // {
+    //     let j =0;
+    //     while(indices[j]!=i)
+    //     {
+    //       j++; 
+    //     }
+    //     str += s[j]
+    // }
+    // return str;
+};
+console.log(restoreString("codeleet",[4,5,6,7,0,2,1,3]));
+
+Using C#
+
+public class Solution {
+    public string RestoreString(string s, int[] indices) {
+        char[] res = new char[s.Length];
+        for(int i = 0; i < s.Length; i++) {
+            res[indices[i]] = s[i];
+        }
+        return new string(res);
+    }
+}
