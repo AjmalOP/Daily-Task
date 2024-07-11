@@ -1,0 +1,25 @@
+// LEET CODE PROBLEM 3110 : https://leetcode.com/problems/score-of-a-string/
+
+Using JavaScript
+
+var scoreOfString = function(s) {
+    let out = 0;
+    for(i=0;i<s.length-1;i++)
+    {
+        out += Math.abs(s.charCodeAt(i)-s.charCodeAt(i+1))
+    }
+    return out;
+};
+
+Using C#
+
+public class Solution {
+    public int ScoreOfString(string s) {
+        int outer = 0;
+        for(int i=0;i<s.Length-1;i++)
+        {
+            outer += Math.Abs(s[i] - s[i+1]);
+        }
+        return outer;
+    }
+}
