@@ -1,0 +1,27 @@
+// LEET CODE PROBLEM 2433 : https://leetcode.com/problems/find-the-original-array-of-prefix-xor/
+
+Using JavaScript
+
+var findArray = function(pref) {
+    let ret = [pref[0]];
+    
+    for(i=1;i<pref.length;i++)
+    {
+      ret[i] = pref[i-1]^pref[i];
+    }
+    return ret;
+};
+
+Using C#
+
+public class Solution {
+    public int[] FindArray(int[] pref) {
+        int[] output = new int[pref.Length];
+        output[0] = pref[0];
+        for(int i=1;i<pref.Length;i++)
+        {
+            output[i] = pref[i-1]^pref[i];
+        }
+        return output;
+    }
+}
