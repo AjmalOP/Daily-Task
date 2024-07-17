@@ -1,0 +1,19 @@
+// LEET CODE PROBLEM 2469 : https://leetcode.com/problems/remove-duplicates-from-sorted-array
+
+Using JavaScript
+
+var convertTemperature = function(celsius) {
+    let Kelvin = celsius + 273.15
+    let Fahrenheit = celsius * 1.80 + 32.00
+    return [Kelvin,Fahrenheit]
+};
+
+Using C#
+
+public class Solution {
+    public double[] ConvertTemperature(double celsius) {
+        double kelvin = celsius + 273.15;
+        double fahrenheit = celsius * 1.80 + 32.00;
+        return new double[] { kelvin, fahrenheit };
+    }
+}
