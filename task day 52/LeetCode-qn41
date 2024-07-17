@@ -1,0 +1,31 @@
+// LEET CODE PROBLEM 41 : https://leetcode.com/problems/first-missing-positive
+
+Using JavaScript
+
+var firstMissingPositive = function(nums) {
+    nums = Array.from(new Set(nums.sort((a,b)=>a-b)))
+    nums.splice(0,nums.indexOf(1))
+    for(i=0;i<nums.length;i++)
+    {
+      if(i+1!==nums[i])
+      {
+        return i+1;
+      }
+    }
+    return i+1;
+};
+
+Using C#
+
+public class Solution {
+    public int FirstMissingPositive(int[] nums) {
+        HashSet<int> set = new HashSet<int>(nums);
+        int[] sortedArray = set.Where(x=>x>0).OrderBy(x => x).ToArray();
+        for (int i = 0; i < sortedArray.Length; i++) {
+            if (i + 1 != sortedArray[i]) {
+                return i + 1;
+            }
+        }
+        return sortedArray.Length + 1;
+    }
+}
