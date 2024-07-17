@@ -1,0 +1,25 @@
+// LEET CODE PROBLEM 2894 : https://leetcode.com/problems/divisible-and-non-divisible-sums-difference
+
+Using JavaScript
+
+var differenceOfSums = function(n, m) {
+    let sum=0;
+    for(i=1;i<=n;i++)
+    {
+        sum += (i%m===0)?i*-1:i;
+    }
+    return sum;
+};
+
+Using C#
+
+public class Solution {
+    public int DifferenceOfSums(int n, int m) {
+    int sum=0;
+    for(int i=1;i<=n;i++)
+    {
+        sum += (i%m==0)?i*-1:i;
+    }
+    return sum;
+    }
+}
