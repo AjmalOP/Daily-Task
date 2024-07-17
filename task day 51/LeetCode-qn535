@@ -1,0 +1,24 @@
+// LEET CODE PROBLEM 535 : https://leetcode.com/problems/remove-duplicates-from-sorted-array
+
+Using JavaScript
+
+var encode = function(longUrl) {
+    return decode(longUrl);
+};
+var decode = function(shortUrl) {
+    return shortUrl;
+};
+
+Using C#
+public class Codec {
+
+    // Encodes a URL to a shortened URL
+    public string encode(string longUrl) {
+        return decode(longUrl);
+    }
+
+    // Decodes a shortened URL to its original URL.
+    public string decode(string shortUrl) {
+        return shortUrl;
+    }
+}
