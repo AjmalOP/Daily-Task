@@ -1,0 +1,54 @@
+// LEET CODE PROBLEM 41 : https://leetcode.com/problems/first-missing-positive
+
+Using JavaScript
+
+var canSeePersonsCount = function(heights) {
+    let output = new Array(heights.length).fill(0);
+    let stack = [];
+    
+    for (let i = heights.length - 1; i >= 0; i--) {
+        let count = 0;
+        
+        while (stack.length > 0 && heights[i] > stack[stack.length - 1]) {
+            stack.pop();
+            count++;
+        }
+        
+        if (stack.length > 0) {
+            count++;
+        }
+        
+        output[i] = count;
+        stack.push(heights[i]);
+    }
+    
+    return output;
+};
+
+Using C#
+
+public class Solution {
+    public int[] CanSeePersonsCount(int[] heights) {
+        int[] arr = new int[heights.Length];
+        for(int i=0;i<heights.Length;i++)
+        {
+            int view = 0;
+            int temp = 0;
+            for(int j=i+1;j<heights.Length;j++)
+            {
+                if(heights[i]<=heights[j])
+                {
+                    view++;
+                    break;
+                }
+                if(temp<heights[j])
+                {
+                    temp = heights[j];
+                    view++;
+                }
+            }
+            arr[i] = view;
+        }
+        return arr;
+    }
+}
