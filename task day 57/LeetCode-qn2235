@@ -1,8 +1,15 @@
-// LEET CODE PROBLEM 3190 : https://leetcode.com/problems/find-minimum-operations-to-make-all-elements-divisible-by-three
+// LEET CODE PROBLEM 2235 : https://leetcode.com/problems/add-two-integers/
 
 Using JavaScript
 
-
+var sum = function(num1, num2) {
+    return num1 + num2;
+};
 
 Using C#
 
+public class Solution {
+    public int Sum(int num1, int num2) {
+        return num1 + num2;
+    }
+}
