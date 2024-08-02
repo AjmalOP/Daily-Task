@@ -3,5 +3,29 @@
 
 Using JavaScript
 
+var filter = function(arr, fn) {
+    let arra = [];
+    for(let i=0;i<arr.length;i++)
+    {
+        if(fn(arr[i],i))
+        {
+            arra.push(arr[i]);
+        }
+    }
+    return arra;
+};
+
 
 Using TypeScript
+
+function filter(arr: number[], fn: Fn): number[] {
+    let arra : number[] = [];
+    for(let i=0;i<arr.length;i++)
+    {
+        if(fn(arr[i],i))
+        {
+            arra.push(arr[i]);
+        }
+    }
+    return arra;
+};
