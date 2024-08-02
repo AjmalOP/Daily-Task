@@ -3,5 +3,14 @@
 
 Using JavaScript
 
+var smallestEvenMultiple = function(n) {
+    while(n%2!=0)
+    {
+        n+=n;
+    }
+    return n;
+};
+
 
 Using C#
+
