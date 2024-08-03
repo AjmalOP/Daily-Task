@@ -3,7 +3,46 @@
 
 Using JavaScript
 
+var groupAnagrams = function(strs) {
+    const map = new Map();
 
+    strs.forEach(str => {
+        const sortedStr = str.split("").sort().join("");
+        if (!map.has(sortedStr)) {
+            map.set(sortedStr, []);
+        }
+        map.get(sortedStr).push(str);
+    });
+
+    const result = Array.from(map.values());
+    result.sort((a, b) => a.length - b.length);
+
+    return result;
+};
 
 Using C#
 
+public class Solution {
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
+        Dictionary<string, List<string>> map = new Dictionary<string, List<string>>();
+
+        foreach (string str in strs)
+        {
+            char[] chars = str.ToCharArray();
+            Array.Sort(chars);
+            string sortedStr = new string(chars);
+
+            if (!map.ContainsKey(sortedStr))
+            {
+                map[sortedStr] = new List<string>();
+            }
+
+            map[sortedStr].Add(str);
+        }
+
+        List<IList<string>> result = map.Values.Select(x => (IList<string>)x).ToList();
+        result = result.OrderBy(x => x.Count).ToList();
+
+        return result;
+    }
+}
