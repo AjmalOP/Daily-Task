@@ -1,0 +1,85 @@
+// LEET CODE PROBLEM 6 : https://leetcode.com/problems/zigzag-conversion
+
+
+Using JavaScript
+
+var convert = function(s, numRows) {
+    let arr = new Array(numRows).fill("");
+    let j = 0;
+    let direction = 1;
+    if(numRows == 1)
+    {
+        return s;
+    }
+    for(i=0;i<s.length;i++)
+    {
+        if(direction)
+        {
+            arr[j] += s[i];
+            j++
+            if(j==numRows)
+            {
+                j--
+                direction = 0;
+            }
+        }
+        else
+        {
+            j--
+            arr[j] += s[i];
+            if(j==0)
+            {
+                direction = 1;
+                j++
+            }
+        }
+    }
+    return arr.join("");
+};
+
+
+Using C#
+
+public class Solution {
+    public string Convert(string s, int numRows) {
+        if (numRows == 1)
+        {
+            return s;
+        }
+
+        string[] arr = new string[numRows];
+        for (int i = 0; i < numRows; i++)
+        {
+            arr[i] = "";
+        }
+
+        int j = 0;
+        bool direction = true; // true for down, false for up
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            arr[j] += s[i];
+
+            if (direction)
+            {
+                j++;
+                if (j == numRows)
+                {
+                    j = numRows - 2;
+                    direction = false;
+                }
+            }
+            else
+            {
+                j--;
+                if (j < 0)
+                {
+                    j = 1;
+                    direction = true;
+                }
+            }
+        }
+
+        return string.Join("", arr);
+    }
+}
